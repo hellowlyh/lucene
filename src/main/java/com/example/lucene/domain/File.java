@@ -1,5 +1,7 @@
 package com.example.lucene.domain;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -18,8 +20,10 @@ public class File {
 
 
     @Column(nullable = false, length = 20)
+    @ApiModelProperty("文件名称")
     private String filename;
 
     @Column(nullable = false, length = 20)
+    @ApiModelProperty("文件地址")
     private String address;
 }

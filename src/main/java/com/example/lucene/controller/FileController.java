@@ -1,6 +1,7 @@
 package com.example.lucene.controller;
 
 import com.example.lucene.service.FileService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,9 +24,9 @@ import java.util.Iterator;
  * Greated by Terry on 2019/4/16
  * Time: 14:56
  */
-@RestController
-@ResponseBody
-@RequestMapping("/file")
+//@RestController
+//@ResponseBody
+//@RequestMapping("/file")
 public class FileController {
 
     @Autowired
@@ -40,6 +41,7 @@ public class FileController {
      * @throws IOException
      */
     @PostMapping()
+    @ApiOperation(value = "文件上传服务")
     public String fileupload(@RequestParam("file") CommonsMultipartFile file) throws IOException {
         String path="D:/lucene"+new Date().getTime()+file.getOriginalFilename();
         File newfile=new File(path);
@@ -52,6 +54,7 @@ public class FileController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiOperation(value = "文件删除服务")
     public void deleteId(int id){
         fileService.delete(id);
     }
