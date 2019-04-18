@@ -1,6 +1,7 @@
 package com.example.lucene.domain;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -10,9 +11,9 @@ import javax.validation.constraints.NotBlank;
  * Time: 14:44
  */
 @Entity
-@lombok.Setter
 @lombok.Getter
-public class File {
+@Setter
+public class uploadfile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +27,28 @@ public class File {
     @Column(nullable = false, length = 20)
     @ApiModelProperty("文件地址")
     private String address;
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public String getAddress() {
+        return address;
+    }
 }

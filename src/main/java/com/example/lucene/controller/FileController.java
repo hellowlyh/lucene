@@ -19,14 +19,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 import java.util.Iterator;
+import com.example.lucene.domain.uploadfile;
 
 /**
  * Greated by Terry on 2019/4/16
  * Time: 14:56
  */
-//@RestController
-//@ResponseBody
-//@RequestMapping("/file")
+@RestController
+@ResponseBody
+@RequestMapping("/file")
 public class FileController {
 
     @Autowired
@@ -46,7 +47,7 @@ public class FileController {
         String path="D:/lucene"+new Date().getTime()+file.getOriginalFilename();
         File newfile=new File(path);
         file.transferTo(newfile);
-        com.example.lucene.domain.File fi=new com.example.lucene.domain.File();
+        uploadfile fi=new uploadfile();
         fi.setAddress("D:/lucene"+new Date().getTime()+file.getOriginalFilename());
         fi.setFilename(file.getOriginalFilename());
         fileService.creat(fi);
