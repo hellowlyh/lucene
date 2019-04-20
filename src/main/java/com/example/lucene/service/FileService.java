@@ -1,6 +1,7 @@
 package com.example.lucene.service;
 
-import com.example.lucene.domain.File;
+
+import com.example.lucene.domain.uploadfile;
 
 /**
  * Greated by Terry on 2019/4/16
@@ -8,7 +9,7 @@ import com.example.lucene.domain.File;
  */
 public interface FileService {
 
-    File creat(File file);
+    uploadfile creat(uploadfile file);
 
     void delete(int id);
 

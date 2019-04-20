@@ -1,9 +1,9 @@
 package com.example.lucene.service.impl;
 
-import com.example.lucene.domain.File;
+import com.example.lucene.domain.uploadfile;
+import com.example.lucene.domain.uploadfile;
 import com.example.lucene.repository.FileRespority;
 import com.example.lucene.service.FileService;
-import com.example.lucene.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ public class FileServiceImpl implements FileService{
 
 
     @Override
-    public File creat(File file) {
+    public uploadfile creat(uploadfile file) {
        fileRespority.save(file);
         return file;
     }
